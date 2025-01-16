@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Access Python HTTP Server with Curl
           command: |
-            curl http://0.0.0.0:8000
+            curl http://localhost:8000
 workflows:
   despliegue:
     jobs:

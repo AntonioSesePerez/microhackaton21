@@ -1,1 +1,24 @@
 # Microhackaton 21 pipeline
+name: Pipeline Microhackaton 21
+on: 
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    # https://github.com/actions/setup-python
+    - name: Action para hacer setup de Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+    - name: Ejecución test
+      run: |
+        chmod +x ./tests/test.sh
+        ./tests/test.sh
+    -name: Deployment con Python http.server
+      run: |
+        python3 -m http.server 8000 &
+        sleep 5
+      # Para que dé tiempo a arrancar al servidor 

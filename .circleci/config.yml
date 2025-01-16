@@ -17,7 +17,7 @@ jobs:
       run: |
         chmod +x ./tests/test.sh
         ./tests/test.sh
-    -name: Deployment con Python http.server
+    - name: Deployment con Python http.server
       run: |
         python3 -m http.server 8000 &
         sleep 5

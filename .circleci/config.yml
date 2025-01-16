@@ -20,7 +20,7 @@ jobs:
           # Para que dé tiempo a arrancar al servidor 
       - run:
           name: Access Python HTTP Server with Curl
-          command: 'curl http://0.0.0.0:8000'
+          command: 'curl http://localhost:8000'
 workflows:
   despliegue:
     jobs:
